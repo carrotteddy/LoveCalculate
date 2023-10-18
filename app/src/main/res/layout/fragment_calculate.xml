@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".CalculateFragment"
+    android:orientation="vertical"
+    android:gravity="center">
+
+    <EditText
+        android:id="@+id/ed_first_name"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:hint="@string/first_name"/>
+
+    <EditText
+        android:id="@+id/ed_sec_name"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:hint="@string/second_name"
+        android:layout_marginVertical="10dp"/>
+
+    <Button
+        android:id="@+id/btn_calculate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/calculate"/>
+
+
+</LinearLayout>

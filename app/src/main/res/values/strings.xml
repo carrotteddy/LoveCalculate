@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">LoveCalculate</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="first_name">first name</string>
+    <string name="second_name">second name</string>
+    <string name="calculate">Calculate</string>
+    <string name="you_need_to_choose_someone_better">you need to choose someone better</string>
+    <string name="_100">100%</string>
+</resources>
