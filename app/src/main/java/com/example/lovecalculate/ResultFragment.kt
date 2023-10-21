@@ -22,10 +22,8 @@ class ResultFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        val result = arguments?.getString("result")
-        val percentage = arguments?.getString("percentage")
-        binding.result.text = result
-        binding.percentage.text = percentage
+        val result = arguments?.getSerializable("key")
+        binding.result.text = result.toString()
 
     }
 
