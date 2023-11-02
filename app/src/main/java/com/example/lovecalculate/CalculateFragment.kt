@@ -33,6 +33,7 @@ class CalculateFragment : Fragment(), MainView {
     }
 
     private fun initClicks() {
+
         with(binding) {
             btnCalculate.setOnClickListener {
                 presenter.attachView(this@CalculateFragment)
@@ -40,6 +41,12 @@ class CalculateFragment : Fragment(), MainView {
                     edFirstName.text.toString(),
                     edSecName.text.toString()
                 )
+            }
+            btnHistory.setOnClickListener {
+                val historyFragment = HistoryFragment()
+                val fragmentManager = requireActivity().supportFragmentManager
+                val transaction = fragmentManager.beginTransaction()
+                transaction.replace(R.id.container, historyFragment).addToBackStack(null).commit()
             }
         }
     }

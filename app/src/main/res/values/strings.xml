@@ -7,4 +7,9 @@
     <string name="calculate">Calculate</string>
     <string name="you_need_to_choose_someone_better">you need to choose someone better</string>
     <string name="_100">100%</string>
+    <string name="name_1">Name 1</string>
+    <string name="name_2">Name 2</string>
+    <string name="percentage">percentage</string>
+    <string name="history">History</string>
+    <string name="delete_this">Удалить запись</string>
 </resources>

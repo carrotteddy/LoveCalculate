@@ -21,6 +21,8 @@ class MainPresenter {
                 if (response.isSuccessful) {
                     val model = response.body()
                     model?.let {
+                        it.creationDate = System.currentTimeMillis()
+                        App.appDatabase.getLoveDao().insert(it)
                         view.changeScreen(it)
                     }
                 }
