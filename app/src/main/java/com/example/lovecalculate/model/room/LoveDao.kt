@@ -12,7 +12,7 @@ interface LoveDao {
     @Insert
     fun insert(loveModel: LoveModel)
 
-    @Query("SELECT * FROM love_table")
+    @Query("SELECT * FROM love_table ORDER BY creationDate DESC")
     fun getAll(): List<LoveModel>
 
     @Delete
