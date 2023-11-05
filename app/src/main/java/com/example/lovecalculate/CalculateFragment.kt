@@ -7,17 +7,16 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.example.lovecalculate.databinding.FragmentCalculateBinding
 import com.example.lovecalculate.model.LoveModel
-import com.example.lovecalculate.model.RetrofitService
 import com.example.lovecalculate.view.MainView
-import retrofit2.Call
-import retrofit2.Callback
-import retrofit2.Response
+import dagger.hilt.android.AndroidEntryPoint
+import javax.inject.Inject
 
-
+@AndroidEntryPoint
 class CalculateFragment : Fragment(), MainView {
 
     private lateinit var binding: FragmentCalculateBinding
-    val presenter = MainPresenter()
+    @Inject
+    lateinit var presenter: MainPresenter
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,

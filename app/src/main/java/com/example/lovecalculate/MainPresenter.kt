@@ -1,18 +1,20 @@
 package com.example.lovecalculate
 
 import android.util.Log
+import com.example.lovecalculate.model.LoveApi
 import com.example.lovecalculate.model.LoveModel
-import com.example.lovecalculate.model.RetrofitService
+import com.example.lovecalculate.model.room.LoveDao
 import com.example.lovecalculate.view.MainView
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
+import javax.inject.Inject
 
-class MainPresenter {
+class MainPresenter @Inject constructor(private val api: LoveApi, private val dao: LoveDao) {
 
-    val api = RetrofitService().api
 
     lateinit var view: MainView
+
 
     fun getData(firstName: String, secondName: String) {
 
@@ -22,7 +24,7 @@ class MainPresenter {
                     val model = response.body()
                     model?.let {
                         it.creationDate = System.currentTimeMillis()
-                        App.appDatabase.getLoveDao().insert(it)
+                        dao.insert(it)
                         view.changeScreen(it)
                     }
                 }

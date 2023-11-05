@@ -10,13 +10,19 @@ import androidx.appcompat.app.AlertDialog
 import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.RecyclerView.Adapter
 import com.example.lovecalculate.model.LoveModel
+import com.example.lovecalculate.model.room.AppDatabase
+import com.example.lovecalculate.model.room.LoveDao
 import java.text.SimpleDateFormat
 import java.util.Date
+import javax.inject.Inject
 
 class HistoryAdapter(private val loves: ArrayList<LoveModel>) :
     Adapter<HistoryAdapter.HistoryViewHolder>() {
 
     private lateinit var context: Context
+
+    @Inject
+    lateinit var dao: LoveDao
 
 
     class HistoryViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
@@ -54,8 +60,8 @@ class HistoryAdapter(private val loves: ArrayList<LoveModel>) :
             builder.setTitle(context.getString(R.string.delete_this))
 
             builder.setPositiveButton("Да") { dialog, which ->
-                if (holder.adapterPosition != RecyclerView.NO_POSITION) {
-                    App.appDatabase.getLoveDao().delete(love)
+                if (position != RecyclerView.NO_POSITION) {
+                    dao.delete(love)
                     loves.removeAt(position)
                     notifyItemRemoved(position)
                 }
