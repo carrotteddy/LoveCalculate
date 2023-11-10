@@ -4,6 +4,7 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.core.view.isVisible
 import androidx.recyclerview.widget.RecyclerView
+import com.example.lovecalculate.R
 import com.example.lovecalculate.databinding.ItemOnBoardBinding
 import com.example.lovecalculate.model.OnBoarding
 
@@ -41,6 +42,13 @@ class OnBoardAdapter(private val onClick: () -> Unit) :
             with(binding) {
                 tvTitle.text = onBoarding.title
                 tvDesc.text = onBoarding.desc
+
+                when(adapterPosition){
+                    0-> img.setAnimation(R.raw.animation_1)
+                    1 -> img.setAnimation(R.raw.animation_2)
+                    2 -> img.setAnimation(R.raw.animation_3)
+                    3 -> img.setAnimation(R.raw.animation_4)
+                }
 
                 btnStart.isVisible = adapterPosition == data.lastIndex
                 btnSkip.isVisible = adapterPosition != data.lastIndex
